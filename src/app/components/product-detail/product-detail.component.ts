@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service';
@@ -28,7 +28,7 @@ import { MatListModule } from '@angular/material/list';
 })
 export class ProductDetailComponent implements OnInit, OnChanges {
   @Input() productData: Product | undefined;
-  product: Product | undefined;
+  product = signal<Product | undefined>(undefined);
 
   constructor(
     private route: ActivatedRoute,
@@ -39,14 +39,14 @@ export class ProductDetailComponent implements OnInit, OnChanges {
     // Si no hay input, cargar desde la ruta
     if (!this.productData) {
       const productId = Number(this.route.snapshot.paramMap.get('id'));
-      this.product = this.productService.getProductById(productId);
+      this.product.set(this.productService.getProductById(productId));
     }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     // Si hay cambios en el input, actualizar el producto
     if (changes['productData'] && this.productData) {
-      this.product = this.productData;
+      this.product.set(this.productData);
     }
   }
 } 

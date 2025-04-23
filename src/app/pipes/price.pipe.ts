@@ -5,7 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true
 })
 export class PricePipe implements PipeTransform {
-  transform(value: number): string {
+  transform(value: number | undefined): string {
+    if (value === undefined) {
+      return 'Precio no disponible';
+    }
     return new Intl.NumberFormat('es-CO', {
       style: 'currency',
       currency: 'COP',

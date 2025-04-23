@@ -4,7 +4,7 @@
 </div>
 
 <mat-grid-list cols="4" rowHeight="1:1.5" gutterSize="20">
-  <mat-grid-tile *ngFor="let product of products">
+  <mat-grid-tile *ngFor="let product of products()">
     <mat-card class="product-card">
       <img mat-card-image [src]="product.imageUrl" [alt]="product.name">
       <mat-card-content>

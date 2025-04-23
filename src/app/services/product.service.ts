@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProductService {
-    private products: Product[] = [
+    private products = signal<Product[]>([
         {
             id: 1,
             name: "Samsung Galaxy S25 Ultra 5G",
@@ -46,13 +46,13 @@ export class ProductService {
             category: "Smartwatches",
             stock: 20
         }
-    ];
+    ]);
 
-    getProducts(): Product[] {
-        return this.products;
+    getProducts() {
+        return this.products();
     }
 
     getProductById(id: number): Product | undefined {
-        return this.products.find(product => product.id === id);
+        return this.products().find(product => product.id === id);
     }
 } 

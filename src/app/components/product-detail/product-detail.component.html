@@ -1,6 +1,6 @@
-<mat-card class="product-detail" *ngIf="product">
+<mat-card class="product-detail" *ngIf="product()">
   <mat-card-header>
-    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-title>{{ product()?.name }}</mat-card-title>
     <button mat-button color="primary" routerLink="/general" class="back-button">
       <mat-icon>arrow_back</mat-icon>
       Volver al catálogo
@@ -8,21 +8,21 @@
   </mat-card-header>
   <mat-card-content>
     <div class="product-content">
-      <img [src]="product.imageUrl" [alt]="product.name" class="product-image">
+      <img [src]="product()?.imageUrl" [alt]="product()?.name" class="product-image">
       <div class="product-info">
-        <p class="price">{{ product.price | price }}</p>
-        <p class="description">{{ product.detailedDescription}}</p>
+        <p class="price">{{ product()?.price | price }}</p>
+        <p class="description">{{ product()?.detailedDescription}}</p>
         <mat-divider></mat-divider>
         <mat-list>
           <mat-list-item>
             <mat-icon matListItemIcon>category</mat-icon>
             <div matListItemTitle>Categoría</div>
-            <div matListItemLine>{{ product.category }}</div>
+            <div matListItemLine>{{ product()?.category }}</div>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListItemIcon>inventory</mat-icon>
             <div matListItemTitle>Stock disponible</div>
-            <div matListItemLine>{{ product.stock }} unidades</div>
+            <div matListItemLine>{{ product()?.stock }} unidades</div>
           </mat-list-item>
         </mat-list>
       </div>
