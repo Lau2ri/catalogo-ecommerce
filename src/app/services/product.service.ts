@@ -35,6 +35,16 @@ export class ProductService {
             imageUrl: "assets/images/Sony.jpg",
             category: "Audífonos",
             stock: 40
+        },
+        {
+            id: 4,
+            name: "Samsung Galaxy Watch 6 Classic (43 mm, Plata)",
+            shortDescription: "Smartwatch elegante con bisel giratorio y monitoreo avanzado de salud",
+            detailedDescription: "El Samsung Galaxy Watch 6 Classic combina un diseño atemporal con tecnología de vanguardia. Su bisel giratorio facilita la navegación, mientras que su pantalla Super AMOLED de 1.3 pulgadas ofrece una visualización clara en cualquier entorno. Equipado con sensores avanzados, permite monitorear la frecuencia cardíaca, el sueño, el estrés y más. Con resistencia al agua IP68 y una batería de larga duración, es el compañero ideal para tu día a día.",
+            price: 1499900,
+            imageUrl: "assets/images/watch6.png",
+            category: "Smartwatches",
+            stock: 20
         }
     ];
 
