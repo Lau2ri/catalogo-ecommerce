@@ -55,39 +55,3 @@ Este proyecto implementa un catálogo de productos para una aplicación de comer
    ```
 
 5. Abrir el navegador en `http://localhost:4200/`
-
-## 📦 Scripts disponibles
-
-- `npm start`: Inicia el servidor de desarrollo
-- `npm run build`: Compila el proyecto para producción
-- `npm run watch`: Compila el proyecto en modo desarrollo con recarga automática
-- `npm test`: Ejecuta las pruebas unitarias
-- `npm run serve:ssr:catalogo-ecommerce`: Inicia el servidor con SSR
-
-## 🏗️ Estructura del proyecto
-
-```
-catalogo-ecommerce/
-├── src/                    # Código fuente de la aplicación
-├── public/                 # Archivos estáticos
-├── .angular/              # Configuración de Angular
-├── node_modules/          # Dependencias
-├── angular.json           # Configuración de Angular CLI
-├── package.json           # Dependencias y scripts
-├── tsconfig.json          # Configuración de TypeScript
-└── README.md              # Documentación
-```
-
-## 🤝 Contribución
-
-Las contribuciones son bienvenidas. Por favor, asegúrate de:
-
-1. Fork el repositorio
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
